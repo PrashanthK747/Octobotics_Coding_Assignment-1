@@ -43,12 +43,28 @@ catkin build
 ```bash
 source devel/setup.bash
 ```
+- steps to run simulation
 
+
+- run roscore
+```bash
+roscore
+```
 - launch the simulation using roslaunch
 
 ```bash
 roslaunch inverted_pendulum_sim inverted_pendulum_sim.launch
 ```
+- To give sinesoidal input to the force
+```bash
+rosrun inverted_pendulum_controller sine_force_publisher.py
+```
+- run the state_publisher.py to give input force to SIP cart model
+```bash
+rosrun inverted_pendulum_controller state_subscriber.py
+```
+
+### Published Topi
 
 ### Published Topics
 - /inverted_pendulum/current_state ([inverted_pendulum_sim/CurrentState](https://github.com/octobotics/Octobotics_Coding_Assignment/blob/main/src/inverted_pendulum_sim/msg/CurrentState.msg)) - Publishes the current state of the inverted pendulum at 100 Hz
